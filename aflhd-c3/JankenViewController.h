@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface JankenViewController : UIViewController
+@interface JankenViewController : UIViewController <AVAudioPlayerDelegate>
+
+@property(nonatomic) AVAudioPlayer *audioPlayer_win;
+@property(nonatomic) AVAudioPlayer *audioPlayer_lose;
 
 @end
