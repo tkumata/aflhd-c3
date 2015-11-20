@@ -355,7 +355,7 @@
     NSString *tmp = btntmp.currentTitle;
     
     if (isShokuzaiSelect == YES) {
-        sentShokuzaiTalkLabel.text = [NSString stringWithFormat:@"「%@」ってつたえたよ。\nどんな料理ができるかな？", tmp];
+        sentShokuzaiTalkLabel.text = [NSString stringWithFormat:@"「%@」ってつたえたよ。", tmp];
     } else {
         sentKansoTalkLabel.text = [NSString stringWithFormat:@"「%@」ってつたえたよ。", tmp];
     }
@@ -410,7 +410,7 @@
     // konashi SW の場合 sender 処理を抜かす
     
     if (isShokuzaiSelect == YES) {
-        sentShokuzaiTalkLabel.text = [NSString stringWithFormat:@"「%@」ってつたえたよ。\nどんな料理ができるかな？", tmp];
+        sentShokuzaiTalkLabel.text = [NSString stringWithFormat:@"「%@」ってつたえたよ。", tmp];
     } else {
         sentKansoTalkLabel.text = [NSString stringWithFormat:@"「%@」ってつたえたよ。", tmp];
     }
