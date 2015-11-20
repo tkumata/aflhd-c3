@@ -7,15 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E30A9AB24B918A831F1CD88 /* libPods-aflhd-c3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFCB035CD3B48934C6D422C /* libPods-aflhd-c3.a */; };
+		890F4B4D1BFDE24700D6DCE7 /* JankenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890F4B4C1BFDE24700D6DCE7 /* JankenViewController.m */; };
 		898F53571BFC25B300C71130 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F53561BFC25B300C71130 /* main.m */; };
 		898F535A1BFC25B300C71130 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F53591BFC25B300C71130 /* AppDelegate.m */; };
 		898F535D1BFC25B300C71130 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F535C1BFC25B300C71130 /* ViewController.m */; };
 		898F53601BFC25B300C71130 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 898F535E1BFC25B300C71130 /* Main.storyboard */; };
 		898F53621BFC25B300C71130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 898F53611BFC25B300C71130 /* Assets.xcassets */; };
 		898F53651BFC25B300C71130 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 898F53631BFC25B300C71130 /* LaunchScreen.storyboard */; };
+		898F536D1BFC25DC00C71130 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 898F536C1BFC25DC00C71130 /* MultipeerConnectivity.framework */; };
+		898F53991BFC26A900C71130 /* CBPeripheral+Konashi.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F53721BFC26A900C71130 /* CBPeripheral+Konashi.m */; };
+		898F539A1BFC26A900C71130 /* CBService+Konashi.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F53741BFC26A900C71130 /* CBService+Konashi.m */; };
+		898F539B1BFC26A900C71130 /* CBUUID+Konashi.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F53761BFC26A900C71130 /* CBUUID+Konashi.m */; };
+		898F539C1BFC26A900C71130 /* KNSCentralManager+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F53791BFC26A900C71130 /* KNSCentralManager+UI.m */; };
+		898F539D1BFC26A900C71130 /* Konashi+ACDrive.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F537B1BFC26A900C71130 /* Konashi+ACDrive.m */; };
+		898F539E1BFC26A900C71130 /* Konashi+ADC.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F537D1BFC26A900C71130 /* Konashi+ADC.m */; };
+		898F539F1BFC26A900C71130 /* Konashi+Grove.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F537F1BFC26A900C71130 /* Konashi+Grove.m */; };
+		898F53A01BFC26A900C71130 /* Konashi+JavaScriptBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F53811BFC26A900C71130 /* Konashi+JavaScriptBindings.m */; };
+		898F53A11BFC26A900C71130 /* KNSKonashiPeripheralImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F53871BFC26A900C71130 /* KNSKonashiPeripheralImpl.m */; };
+		898F53A21BFC26A900C71130 /* KNSKoshianPeripheralImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F53891BFC26A900C71130 /* KNSKoshianPeripheralImpl.m */; };
+		898F53A31BFC26A900C71130 /* KNSPeripheralBaseImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F538B1BFC26A900C71130 /* KNSPeripheralBaseImpl.m */; };
+		898F53A41BFC26A900C71130 /* KNSCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F538F1BFC26A900C71130 /* KNSCentralManager.m */; };
+		898F53A51BFC26A900C71130 /* KNSHandlerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F53911BFC26A900C71130 /* KNSHandlerManager.m */; };
+		898F53A61BFC26A900C71130 /* KNSPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F53931BFC26A900C71130 /* KNSPeripheral.m */; };
+		898F53A71BFC26A900C71130 /* Konashi.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F53961BFC26A900C71130 /* Konashi.m */; };
+		898F53A81BFC26A900C71130 /* KonashiUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 898F53981BFC26A900C71130 /* KonashiUtils.m */; };
+		898F53B01BFC4ACA00C71130 /* fokun.png in Resources */ = {isa = PBXBuildFile; fileRef = 898F53AA1BFC4ACA00C71130 /* fokun.png */; };
+		898F53B11BFC4ACA00C71130 /* gohankun.png in Resources */ = {isa = PBXBuildFile; fileRef = 898F53AB1BFC4ACA00C71130 /* gohankun.png */; };
+		898F53B21BFC4ACA00C71130 /* kumakurokun.png in Resources */ = {isa = PBXBuildFile; fileRef = 898F53AC1BFC4ACA00C71130 /* kumakurokun.png */; };
+		898F53B31BFC4ACA00C71130 /* pezumicyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 898F53AD1BFC4ACA00C71130 /* pezumicyan.png */; };
+		898F53B41BFC4ACA00C71130 /* supun.png in Resources */ = {isa = PBXBuildFile; fileRef = 898F53AE1BFC4ACA00C71130 /* supun.png */; };
+		898F53B51BFC4ACA00C71130 /* usapyon.png in Resources */ = {isa = PBXBuildFile; fileRef = 898F53AF1BFC4ACA00C71130 /* usapyon.png */; };
+		898F53B71BFC4B6E00C71130 /* clock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 898F53B61BFC4B6E00C71130 /* clock.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41DBB798E07E69B54B00C6C3 /* Pods-aflhd-c3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aflhd-c3.release.xcconfig"; path = "Pods/Target Support Files/Pods-aflhd-c3/Pods-aflhd-c3.release.xcconfig"; sourceTree = "<group>"; };
+		6FFCB035CD3B48934C6D422C /* libPods-aflhd-c3.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-aflhd-c3.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7923DE541F21DCEF27920BDB /* Pods-aflhd-c3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aflhd-c3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aflhd-c3/Pods-aflhd-c3.debug.xcconfig"; sourceTree = "<group>"; };
+		890F4B4B1BFDE24700D6DCE7 /* JankenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JankenViewController.h; sourceTree = "<group>"; };
+		890F4B4C1BFDE24700D6DCE7 /* JankenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JankenViewController.m; sourceTree = "<group>"; };
 		898F53521BFC25B300C71130 /* aflhd-c3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "aflhd-c3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		898F53561BFC25B300C71130 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		898F53581BFC25B300C71130 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +57,51 @@
 		898F53611BFC25B300C71130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		898F53641BFC25B300C71130 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		898F53661BFC25B300C71130 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		898F536C1BFC25DC00C71130 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		898F53711BFC26A900C71130 /* CBPeripheral+Konashi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBPeripheral+Konashi.h"; sourceTree = "<group>"; };
+		898F53721BFC26A900C71130 /* CBPeripheral+Konashi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBPeripheral+Konashi.m"; sourceTree = "<group>"; };
+		898F53731BFC26A900C71130 /* CBService+Konashi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBService+Konashi.h"; sourceTree = "<group>"; };
+		898F53741BFC26A900C71130 /* CBService+Konashi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBService+Konashi.m"; sourceTree = "<group>"; };
+		898F53751BFC26A900C71130 /* CBUUID+Konashi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBUUID+Konashi.h"; sourceTree = "<group>"; };
+		898F53761BFC26A900C71130 /* CBUUID+Konashi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBUUID+Konashi.m"; sourceTree = "<group>"; };
+		898F53781BFC26A900C71130 /* KNSCentralManager+UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KNSCentralManager+UI.h"; sourceTree = "<group>"; };
+		898F53791BFC26A900C71130 /* KNSCentralManager+UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KNSCentralManager+UI.m"; sourceTree = "<group>"; };
+		898F537A1BFC26A900C71130 /* Konashi+ACDrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Konashi+ACDrive.h"; sourceTree = "<group>"; };
+		898F537B1BFC26A900C71130 /* Konashi+ACDrive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Konashi+ACDrive.m"; sourceTree = "<group>"; };
+		898F537C1BFC26A900C71130 /* Konashi+ADC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Konashi+ADC.h"; sourceTree = "<group>"; };
+		898F537D1BFC26A900C71130 /* Konashi+ADC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Konashi+ADC.m"; sourceTree = "<group>"; };
+		898F537E1BFC26A900C71130 /* Konashi+Grove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Konashi+Grove.h"; sourceTree = "<group>"; };
+		898F537F1BFC26A900C71130 /* Konashi+Grove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Konashi+Grove.m"; sourceTree = "<group>"; };
+		898F53801BFC26A900C71130 /* Konashi+JavaScriptBindings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Konashi+JavaScriptBindings.h"; sourceTree = "<group>"; };
+		898F53811BFC26A900C71130 /* Konashi+JavaScriptBindings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Konashi+JavaScriptBindings.m"; sourceTree = "<group>"; };
+		898F53821BFC26A900C71130 /* KonashiJavaScriptBindingsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KonashiJavaScriptBindingsProtocol.h; sourceTree = "<group>"; };
+		898F53841BFC26A900C71130 /* KonashiConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KonashiConstant.h; sourceTree = "<group>"; };
+		898F53861BFC26A900C71130 /* KNSKonashiPeripheralImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNSKonashiPeripheralImpl.h; sourceTree = "<group>"; };
+		898F53871BFC26A900C71130 /* KNSKonashiPeripheralImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNSKonashiPeripheralImpl.m; sourceTree = "<group>"; };
+		898F53881BFC26A900C71130 /* KNSKoshianPeripheralImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNSKoshianPeripheralImpl.h; sourceTree = "<group>"; };
+		898F53891BFC26A900C71130 /* KNSKoshianPeripheralImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNSKoshianPeripheralImpl.m; sourceTree = "<group>"; };
+		898F538A1BFC26A900C71130 /* KNSPeripheralBaseImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNSPeripheralBaseImpl.h; sourceTree = "<group>"; };
+		898F538B1BFC26A900C71130 /* KNSPeripheralBaseImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNSPeripheralBaseImpl.m; sourceTree = "<group>"; };
+		898F538C1BFC26A900C71130 /* KNSPeripheralImplProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNSPeripheralImplProtocol.h; sourceTree = "<group>"; };
+		898F538D1BFC26A900C71130 /* KNSPeripheralImpls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNSPeripheralImpls.h; sourceTree = "<group>"; };
+		898F538E1BFC26A900C71130 /* KNSCentralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNSCentralManager.h; sourceTree = "<group>"; };
+		898F538F1BFC26A900C71130 /* KNSCentralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNSCentralManager.m; sourceTree = "<group>"; };
+		898F53901BFC26A900C71130 /* KNSHandlerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNSHandlerManager.h; sourceTree = "<group>"; };
+		898F53911BFC26A900C71130 /* KNSHandlerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNSHandlerManager.m; sourceTree = "<group>"; };
+		898F53921BFC26A900C71130 /* KNSPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNSPeripheral.h; sourceTree = "<group>"; };
+		898F53931BFC26A900C71130 /* KNSPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNSPeripheral.m; sourceTree = "<group>"; };
+		898F53941BFC26A900C71130 /* Konashi-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Konashi-Prefix.pch"; sourceTree = "<group>"; };
+		898F53951BFC26A900C71130 /* Konashi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Konashi.h; sourceTree = "<group>"; };
+		898F53961BFC26A900C71130 /* Konashi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Konashi.m; sourceTree = "<group>"; };
+		898F53971BFC26A900C71130 /* KonashiUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KonashiUtils.h; sourceTree = "<group>"; };
+		898F53981BFC26A900C71130 /* KonashiUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KonashiUtils.m; sourceTree = "<group>"; };
+		898F53AA1BFC4ACA00C71130 /* fokun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fokun.png; sourceTree = "<group>"; };
+		898F53AB1BFC4ACA00C71130 /* gohankun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gohankun.png; sourceTree = "<group>"; };
+		898F53AC1BFC4ACA00C71130 /* kumakurokun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kumakurokun.png; sourceTree = "<group>"; };
+		898F53AD1BFC4ACA00C71130 /* pezumicyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pezumicyan.png; sourceTree = "<group>"; };
+		898F53AE1BFC4ACA00C71130 /* supun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = supun.png; sourceTree = "<group>"; };
+		898F53AF1BFC4ACA00C71130 /* usapyon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usapyon.png; sourceTree = "<group>"; };
+		898F53B61BFC4B6E00C71130 /* clock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = clock.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +109,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				898F536D1BFC25DC00C71130 /* MultipeerConnectivity.framework in Frameworks */,
+				5E30A9AB24B918A831F1CD88 /* libPods-aflhd-c3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		809D7EE380A557A1F121C08E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6FFCB035CD3B48934C6D422C /* libPods-aflhd-c3.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		898F53491BFC25B300C71130 = {
 			isa = PBXGroup;
 			children = (
+				898F536C1BFC25DC00C71130 /* MultipeerConnectivity.framework */,
 				898F53541BFC25B300C71130 /* aflhd-c3 */,
 				898F53531BFC25B300C71130 /* Products */,
+				9FC4E2F4E0940F0DB0B73C6D /* Pods */,
+				809D7EE380A557A1F121C08E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,14 +147,18 @@
 		898F53541BFC25B300C71130 /* aflhd-c3 */ = {
 			isa = PBXGroup;
 			children = (
+				898F536E1BFC26A900C71130 /* Konashi */,
 				898F53581BFC25B300C71130 /* AppDelegate.h */,
 				898F53591BFC25B300C71130 /* AppDelegate.m */,
 				898F535B1BFC25B300C71130 /* ViewController.h */,
 				898F535C1BFC25B300C71130 /* ViewController.m */,
+				890F4B4B1BFDE24700D6DCE7 /* JankenViewController.h */,
+				890F4B4C1BFDE24700D6DCE7 /* JankenViewController.m */,
 				898F535E1BFC25B300C71130 /* Main.storyboard */,
 				898F53611BFC25B300C71130 /* Assets.xcassets */,
 				898F53631BFC25B300C71130 /* LaunchScreen.storyboard */,
 				898F53661BFC25B300C71130 /* Info.plist */,
+				898F53A91BFC4AA800C71130 /* images */,
 				898F53551BFC25B300C71130 /* Supporting Files */,
 			);
 			path = "aflhd-c3";
@@ -79,6 +172,113 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		898F536E1BFC26A900C71130 /* Konashi */ = {
+			isa = PBXGroup;
+			children = (
+				898F536F1BFC26A900C71130 /* Category */,
+				898F53831BFC26A900C71130 /* Constant */,
+				898F53851BFC26A900C71130 /* Impl */,
+				898F538E1BFC26A900C71130 /* KNSCentralManager.h */,
+				898F538F1BFC26A900C71130 /* KNSCentralManager.m */,
+				898F53901BFC26A900C71130 /* KNSHandlerManager.h */,
+				898F53911BFC26A900C71130 /* KNSHandlerManager.m */,
+				898F53921BFC26A900C71130 /* KNSPeripheral.h */,
+				898F53931BFC26A900C71130 /* KNSPeripheral.m */,
+				898F53941BFC26A900C71130 /* Konashi-Prefix.pch */,
+				898F53951BFC26A900C71130 /* Konashi.h */,
+				898F53961BFC26A900C71130 /* Konashi.m */,
+				898F53971BFC26A900C71130 /* KonashiUtils.h */,
+				898F53981BFC26A900C71130 /* KonashiUtils.m */,
+			);
+			path = Konashi;
+			sourceTree = "<group>";
+		};
+		898F536F1BFC26A900C71130 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				898F53701BFC26A900C71130 /* CoreBluetooth */,
+				898F53771BFC26A900C71130 /* Konashi */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		898F53701BFC26A900C71130 /* CoreBluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				898F53711BFC26A900C71130 /* CBPeripheral+Konashi.h */,
+				898F53721BFC26A900C71130 /* CBPeripheral+Konashi.m */,
+				898F53731BFC26A900C71130 /* CBService+Konashi.h */,
+				898F53741BFC26A900C71130 /* CBService+Konashi.m */,
+				898F53751BFC26A900C71130 /* CBUUID+Konashi.h */,
+				898F53761BFC26A900C71130 /* CBUUID+Konashi.m */,
+			);
+			path = CoreBluetooth;
+			sourceTree = "<group>";
+		};
+		898F53771BFC26A900C71130 /* Konashi */ = {
+			isa = PBXGroup;
+			children = (
+				898F53781BFC26A900C71130 /* KNSCentralManager+UI.h */,
+				898F53791BFC26A900C71130 /* KNSCentralManager+UI.m */,
+				898F537A1BFC26A900C71130 /* Konashi+ACDrive.h */,
+				898F537B1BFC26A900C71130 /* Konashi+ACDrive.m */,
+				898F537C1BFC26A900C71130 /* Konashi+ADC.h */,
+				898F537D1BFC26A900C71130 /* Konashi+ADC.m */,
+				898F537E1BFC26A900C71130 /* Konashi+Grove.h */,
+				898F537F1BFC26A900C71130 /* Konashi+Grove.m */,
+				898F53801BFC26A900C71130 /* Konashi+JavaScriptBindings.h */,
+				898F53811BFC26A900C71130 /* Konashi+JavaScriptBindings.m */,
+				898F53821BFC26A900C71130 /* KonashiJavaScriptBindingsProtocol.h */,
+			);
+			path = Konashi;
+			sourceTree = "<group>";
+		};
+		898F53831BFC26A900C71130 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				898F53841BFC26A900C71130 /* KonashiConstant.h */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		898F53851BFC26A900C71130 /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				898F53861BFC26A900C71130 /* KNSKonashiPeripheralImpl.h */,
+				898F53871BFC26A900C71130 /* KNSKonashiPeripheralImpl.m */,
+				898F53881BFC26A900C71130 /* KNSKoshianPeripheralImpl.h */,
+				898F53891BFC26A900C71130 /* KNSKoshianPeripheralImpl.m */,
+				898F538A1BFC26A900C71130 /* KNSPeripheralBaseImpl.h */,
+				898F538B1BFC26A900C71130 /* KNSPeripheralBaseImpl.m */,
+				898F538C1BFC26A900C71130 /* KNSPeripheralImplProtocol.h */,
+				898F538D1BFC26A900C71130 /* KNSPeripheralImpls.h */,
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
+		898F53A91BFC4AA800C71130 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				898F53B61BFC4B6E00C71130 /* clock.jpg */,
+				898F53AA1BFC4ACA00C71130 /* fokun.png */,
+				898F53AB1BFC4ACA00C71130 /* gohankun.png */,
+				898F53AC1BFC4ACA00C71130 /* kumakurokun.png */,
+				898F53AD1BFC4ACA00C71130 /* pezumicyan.png */,
+				898F53AE1BFC4ACA00C71130 /* supun.png */,
+				898F53AF1BFC4ACA00C71130 /* usapyon.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		9FC4E2F4E0940F0DB0B73C6D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7923DE541F21DCEF27920BDB /* Pods-aflhd-c3.debug.xcconfig */,
+				41DBB798E07E69B54B00C6C3 /* Pods-aflhd-c3.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +286,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 898F53691BFC25B300C71130 /* Build configuration list for PBXNativeTarget "aflhd-c3" */;
 			buildPhases = (
+				47CCA8B8D878931A5D98E82C /* Check Pods Manifest.lock */,
 				898F534E1BFC25B300C71130 /* Sources */,
 				898F534F1BFC25B300C71130 /* Frameworks */,
 				898F53501BFC25B300C71130 /* Resources */,
+				FCA0AFCC0FDF34E2D08DBE31 /* Embed Pods Frameworks */,
+				986F5E1D2EEB64760BF9749A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -111,6 +314,11 @@
 					898F53511BFC25B300C71130 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = RA8AYBBYPE;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -137,13 +345,68 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				898F53B11BFC4ACA00C71130 /* gohankun.png in Resources */,
+				898F53B21BFC4ACA00C71130 /* kumakurokun.png in Resources */,
+				898F53B31BFC4ACA00C71130 /* pezumicyan.png in Resources */,
 				898F53651BFC25B300C71130 /* LaunchScreen.storyboard in Resources */,
 				898F53621BFC25B300C71130 /* Assets.xcassets in Resources */,
 				898F53601BFC25B300C71130 /* Main.storyboard in Resources */,
+				898F53B71BFC4B6E00C71130 /* clock.jpg in Resources */,
+				898F53B51BFC4ACA00C71130 /* usapyon.png in Resources */,
+				898F53B01BFC4ACA00C71130 /* fokun.png in Resources */,
+				898F53B41BFC4ACA00C71130 /* supun.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47CCA8B8D878931A5D98E82C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		986F5E1D2EEB64760BF9749A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-aflhd-c3/Pods-aflhd-c3-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCA0AFCC0FDF34E2D08DBE31 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-aflhd-c3/Pods-aflhd-c3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		898F534E1BFC25B300C71130 /* Sources */ = {
@@ -152,7 +415,24 @@
 			files = (
 				898F535D1BFC25B300C71130 /* ViewController.m in Sources */,
 				898F535A1BFC25B300C71130 /* AppDelegate.m in Sources */,
+				898F53A61BFC26A900C71130 /* KNSPeripheral.m in Sources */,
+				890F4B4D1BFDE24700D6DCE7 /* JankenViewController.m in Sources */,
+				898F53A41BFC26A900C71130 /* KNSCentralManager.m in Sources */,
+				898F53A51BFC26A900C71130 /* KNSHandlerManager.m in Sources */,
+				898F53A01BFC26A900C71130 /* Konashi+JavaScriptBindings.m in Sources */,
+				898F539D1BFC26A900C71130 /* Konashi+ACDrive.m in Sources */,
+				898F53A11BFC26A900C71130 /* KNSKonashiPeripheralImpl.m in Sources */,
+				898F53A31BFC26A900C71130 /* KNSPeripheralBaseImpl.m in Sources */,
+				898F53991BFC26A900C71130 /* CBPeripheral+Konashi.m in Sources */,
+				898F539A1BFC26A900C71130 /* CBService+Konashi.m in Sources */,
+				898F53A71BFC26A900C71130 /* Konashi.m in Sources */,
+				898F539C1BFC26A900C71130 /* KNSCentralManager+UI.m in Sources */,
 				898F53571BFC25B300C71130 /* main.m in Sources */,
+				898F539F1BFC26A900C71130 /* Konashi+Grove.m in Sources */,
+				898F539E1BFC26A900C71130 /* Konashi+ADC.m in Sources */,
+				898F53A21BFC26A900C71130 /* KNSKoshianPeripheralImpl.m in Sources */,
+				898F53A81BFC26A900C71130 /* KonashiUtils.m in Sources */,
+				898F539B1BFC26A900C71130 /* CBUUID+Konashi.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +494,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -252,7 +532,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -262,6 +542,7 @@
 		};
 		898F536A1BFC25B300C71130 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7923DE541F21DCEF27920BDB /* Pods-aflhd-c3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "aflhd-c3/Info.plist";
@@ -273,6 +554,7 @@
 		};
 		898F536B1BFC25B300C71130 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41DBB798E07E69B54B00C6C3 /* Pods-aflhd-c3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "aflhd-c3/Info.plist";
@@ -301,6 +583,7 @@
 				898F536B1BFC25B300C71130 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
