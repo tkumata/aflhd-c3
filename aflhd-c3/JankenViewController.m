@@ -44,6 +44,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // 背景画像の設定
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"12247660_893939417359933_6473737247774943716_o.jpg"]];
+    
     [Konashi initialize];
     [[Konashi shared] setReadyHandler:^{
 #ifdef DEBUG
@@ -62,8 +65,10 @@
     [[gooButton layer] setBorderWidth:1.0];
     [[gooButton layer] setCornerRadius:5.0];
     [[gooButton layer] setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+    [[gooButton layer] setBackgroundColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
     [gooButton setTitle:[NSString stringWithFormat:@"グー"] forState:UIControlStateNormal];
     [gooButton addTarget:self action:@selector(result:) forControlEvents:UIControlEventTouchDown];
+    [gooButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:gooButton];
     
     // ボタン 2
@@ -73,8 +78,10 @@
     [[chokiButton layer] setBorderWidth:1.0];
     [[chokiButton layer] setCornerRadius:5.0];
     [[chokiButton layer] setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+    [[chokiButton layer] setBackgroundColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
     [chokiButton setTitle:[NSString stringWithFormat:@"チョキ"] forState:UIControlStateNormal];
     [chokiButton addTarget:self action:@selector(result:) forControlEvents:UIControlEventTouchDown];
+    [chokiButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:chokiButton];
     
     // ボタン 3
@@ -84,19 +91,23 @@
     [[parButton layer] setBorderWidth:1.0];
     [[parButton layer] setCornerRadius:5.0];
     [[parButton layer] setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+    [[parButton layer] setBackgroundColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
     [parButton setTitle:[NSString stringWithFormat:@"パー"] forState:UIControlStateNormal];
     [parButton addTarget:self action:@selector(result:) forControlEvents:UIControlEventTouchDown];
+    [parButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:parButton];
     
     // キャラクタのセリフ風なラベル
     talkLabel = [[UILabel alloc] init];
     talkLabel.tag = 301;
-    talkLabel.frame = CGRectMake(40, 70, 260, screenHeight-140);
-    [[talkLabel layer] setBorderWidth:1.0];
-    [[talkLabel layer] setCornerRadius:5.0];
-    [[talkLabel layer] setBorderColor:[[UIColor grayColor] CGColor]];
+    talkLabel.frame = CGRectMake(40, 70, 500, screenHeight-140);
+//    [[talkLabel layer] setBorderWidth:1.0];
+//    [[talkLabel layer] setCornerRadius:5.0];
+//    [[talkLabel layer] setBorderColor:[[UIColor grayColor] CGColor]];
     talkLabel.numberOfLines = 10;
     talkLabel.text = @"じゃーん、けん！";
+    talkLabel.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.];
+    talkLabel.font = [UIFont boldSystemFontOfSize:60];
     
     // 再選ボタン
     nextJankenButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -104,9 +115,11 @@
     nextJankenButton.frame = CGRectMake(screenWidth/2, screenHeight/2, screenWidth/3, 60);
     [[nextJankenButton layer] setBorderWidth:3.0];
     [[nextJankenButton layer] setCornerRadius:5.0];
-    [[nextJankenButton layer] setBorderColor:[[UIColor blackColor] CGColor]];
+    [[nextJankenButton layer] setBorderColor:[[UIColor colorWithRed:1. green:0.74 blue:0. alpha:1.0] CGColor]];
+    [[nextJankenButton layer] setBackgroundColor:[[UIColor colorWithRed:1. green:0.74 blue:0. alpha:1.0] CGColor]];
     [nextJankenButton setTitle:[NSString stringWithFormat:@"もういっかいやる"] forState:UIControlStateNormal];
     [nextJankenButton addTarget:self action:@selector(nextJanken) forControlEvents:UIControlEventTouchDown];
+    [nextJankenButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     // 戻るボタン
     backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -114,21 +127,29 @@
     backButton.frame = CGRectMake(10, 10, screenWidth/3-20, 40);
     [[backButton layer] setBorderWidth:1.0];
     [[backButton layer] setCornerRadius:5.0];
-    [[backButton layer] setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+    [[backButton layer] setBorderColor:[[UIColor colorWithRed:0.86 green:0.86 blue:0.86 alpha:1.0] CGColor]];
+//    [[backButton layer] setBackgroundColor:[[UIColor colorWithRed:0.86 green:0.86 blue:0.86 alpha:1.0] CGColor]];
     [backButton setTitle:[NSString stringWithFormat:@"おわり"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(dismissView) forControlEvents:UIControlEventTouchUpInside];
+    [backButton setTitleColor:[UIColor colorWithRed:0.86 green:0.86 blue:0.86 alpha:1.0] forState:UIControlStateNormal];
     [self.view addSubview:backButton];
     
     NSError *error = nil;
-    NSString *path_win = [[NSBundle mainBundle] pathForResource:@"win" ofType:@"mp3"];
+    NSString *path_win = [[NSBundle mainBundle] pathForResource:@"button84" ofType:@"mp3"];
     NSURL *url_win = [[NSURL alloc] initFileURLWithPath:path_win];
     self.audioPlayer_win = [[AVAudioPlayer alloc] initWithContentsOfURL:url_win error:&error];
     [self.audioPlayer_win setDelegate:self];
-    NSString *path_lose = [[NSBundle mainBundle] pathForResource:@"lose" ofType:@"mp3"];
+    
+    NSString *path_lose = [[NSBundle mainBundle] pathForResource:@"button77" ofType:@"mp3"];
     NSURL *url_lose = [[NSURL alloc] initFileURLWithPath:path_lose];
     self.audioPlayer_lose = [[AVAudioPlayer alloc] initWithContentsOfURL:url_lose error:&error];
     [self.audioPlayer_lose setDelegate:self];
     
+    NSString *path_aiko = [[NSBundle mainBundle] pathForResource:@"one01" ofType:@"mp3"];
+    NSURL *url_aiko = [[NSURL alloc] initFileURLWithPath:path_aiko];
+    self.audioPlayer_aiko = [[AVAudioPlayer alloc] initWithContentsOfURL:url_aiko error:&error];
+    [self.audioPlayer_aiko setDelegate:self];
+
     // init screen
     [self initScreen];
 
@@ -180,11 +201,12 @@
     
     if (result == 0) {
         talkLabel.text = @"あいこ";
+        [self.audioPlayer_aiko play];
     } else if (result == 2) {
-        talkLabel.text = @"あなたのかち！";
+        talkLabel.text = [NSString stringWithFormat:@"%@であなたのかち！", tmp];
         [self.audioPlayer_win play];
     } else {
-        talkLabel.text = @"あなたのまけ！";
+        talkLabel.text = [NSString stringWithFormat:@"%@であなたのまけ！", tmp];
         [self.audioPlayer_lose play];
     }
     

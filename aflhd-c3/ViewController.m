@@ -70,7 +70,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"food.png"]];
+    // 背景画像の設定
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"yellodot.png"]];
     
     [Konashi initialize];
     [[Konashi shared] setReadyHandler:^{
@@ -137,8 +138,8 @@
     selectShokuzaiButton1.frame = CGRectMake(10, screenHeight-40, screenWidth/3-20, 40);
     [[selectShokuzaiButton1 layer] setBorderWidth:1.0];
     [[selectShokuzaiButton1 layer] setCornerRadius:5.0];
-    [[selectShokuzaiButton1 layer] setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
-    [[selectShokuzaiButton1 layer] setBackgroundColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+    [[selectShokuzaiButton1 layer] setBorderColor:[[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0] CGColor]];
+    [[selectShokuzaiButton1 layer] setBackgroundColor:[[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0] CGColor]];
     [selectShokuzaiButton1 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     // 食材選択ボタン 2
@@ -147,8 +148,8 @@
     selectShokuzaiButton2.frame = CGRectMake(screenWidth/3+10, screenHeight-40, screenWidth/3-20, 40);
     [[selectShokuzaiButton2 layer] setBorderWidth:1.0];
     [[selectShokuzaiButton2 layer] setCornerRadius:5.0];
-    [[selectShokuzaiButton2 layer] setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
-    [[selectShokuzaiButton2 layer] setBackgroundColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+    [[selectShokuzaiButton2 layer] setBorderColor:[[UIColor colorWithRed:1.0 green:0. blue:0. alpha:1.0] CGColor]];
+    [[selectShokuzaiButton2 layer] setBackgroundColor:[[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0] CGColor]];
     [selectShokuzaiButton2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     // 食材選択ボタン 3
@@ -157,11 +158,11 @@
     selectShokuzaiButton3.frame = CGRectMake(screenWidth*2/3+10, screenHeight-40, screenWidth/3-20, 40);
     [[selectShokuzaiButton3 layer] setBorderWidth:1.0];
     [[selectShokuzaiButton3 layer] setCornerRadius:5.0];
-    [[selectShokuzaiButton3 layer] setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
-    [[selectShokuzaiButton3 layer] setBackgroundColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+    [[selectShokuzaiButton3 layer] setBorderColor:[[UIColor colorWithRed:1.0 green:0. blue:0. alpha:1.0] CGColor]];
+    [[selectShokuzaiButton3 layer] setBackgroundColor:[[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0] CGColor]];
     [selectShokuzaiButton3 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    // 食材選択時のキャラクタ(未使用)
+    // 食材選択時のキャラクタ (未使用)
     selectShokuzaiImgView = [[UIImageView alloc] init];
     selectShokuzaiImgView.tag = 204;
     selectShokuzaiImgView.frame = CGRectMake(0, 0, 260, 260);
@@ -175,22 +176,23 @@
     selectShokuzaiTalkLabel.text = @"なにがいいか、ボタンをおしてね。";
     [[selectShokuzaiTalkLabel layer] setBorderWidth:1.0];
     [[selectShokuzaiTalkLabel layer] setCornerRadius:5.0];
-    [[selectShokuzaiTalkLabel layer] setBorderColor:[[UIColor grayColor] CGColor]];
+    [[selectShokuzaiTalkLabel layer] setBorderColor:[[UIColor colorWithRed:1.0 green:0. blue:0. alpha:1.0] CGColor]];
     [[selectShokuzaiTalkLabel layer] setBackgroundColor:[[UIColor whiteColor] CGColor]];
     selectShokuzaiTalkLabel.textAlignment = NSTextAlignmentCenter;
     selectShokuzaiTalkLabel.numberOfLines = 2;
+    selectShokuzaiTalkLabel.textColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
     
-    // 選択画面中のキャラクタ 1
+    // 選択画面ボタンの上のキャラクタ 1
     selectShokuzaiImgView1 = [[UIImageView alloc] init];
     selectShokuzaiImgView1.tag = 206;
     selectShokuzaiImgView1.frame = CGRectMake(20, 90, screenWidth/3-20, screenWidth/3-20);
     
-    // 選択画面中のキャラクタ 2
+    // 選択画面ボタンの上のキャラクタ 2
     selectShokuzaiImgView2 = [[UIImageView alloc] init];
     selectShokuzaiImgView2.tag = 206;
     selectShokuzaiImgView2.frame = CGRectMake(screenWidth/3+10, 90, screenWidth/3-20, screenWidth/3-20);
     
-    // 選択画面中のキャラクタ 3
+    // 選択画面ボタンの上のキャラクタ 3
     selectShokuzaiImgView3 = [[UIImageView alloc] init];
     selectShokuzaiImgView3.tag = 206;
     selectShokuzaiImgView3.frame = CGRectMake(screenWidth*2/3+10, 90, screenWidth/3-20, screenWidth/3-20);
@@ -202,9 +204,10 @@
     sentShokuzaiTalkLabel.frame = CGRectMake(40, 70, 260, screenHeight-80);
     [[sentShokuzaiTalkLabel layer] setBorderWidth:1.0];
     [[sentShokuzaiTalkLabel layer] setCornerRadius:5.0];
-    [[sentShokuzaiTalkLabel layer] setBorderColor:[[UIColor grayColor] CGColor]];
+    [[sentShokuzaiTalkLabel layer] setBorderColor:[[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0] CGColor]];
     [[sentShokuzaiTalkLabel layer] setBackgroundColor:[[UIColor whiteColor] CGColor]];
     sentShokuzaiTalkLabel.numberOfLines = 10;
+    sentShokuzaiTalkLabel.textColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
     
     // キャラクタ
     sentShokuzaiCharImg = [[UIImageView alloc] init];
@@ -213,26 +216,27 @@
     sentShokuzaiCharImg.image = charImg5;
     sentShokuzaiCharImg.userInteractionEnabled = YES;
     
-    // 初期画面へ戻るボタン
+    // 時計へ戻るボタン
     backClockButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     backClockButton.tag = 303;
     backClockButton.frame = CGRectMake(10, 10, screenWidth/3-20, 40);
     [[backClockButton layer] setBorderWidth:1.0];
     [[backClockButton layer] setCornerRadius:5.0];
-    [[backClockButton layer] setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
-    [[backClockButton layer] setBackgroundColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+    [[backClockButton layer] setBorderColor:[[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0] CGColor]];
+    [[backClockButton layer] setBackgroundColor:[[UIColor colorWithRed:1.0 green:0. blue:0. alpha:1.0] CGColor]];
     [backClockButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     // じゃんけんボタン
     toJankenButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     toJankenButton.tag = 303;
-    toJankenButton.frame = CGRectMake(screenWidth-screenWidth/3-20, screenHeight-40, screenWidth/3-20, 40);
+    toJankenButton.frame = CGRectMake(screenWidth-50, screenHeight-50, 50, 50);
     [[toJankenButton layer] setBorderWidth:1.0];
     [[toJankenButton layer] setCornerRadius:5.0];
-    [[toJankenButton layer] setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
-    [[toJankenButton layer] setBackgroundColor:[[UIColor whiteColor] CGColor]];
-    [toJankenButton setTitle:@"じゃんけん" forState:UIControlStateNormal];
+    [[toJankenButton layer] setBorderColor:[[UIColor colorWithRed:232.0 green:66.0 blue:53.0 alpha:0.] CGColor]];
+    [toJankenButton setTitle:@"★" forState:UIControlStateNormal];
+    [toJankenButton.titleLabel setFont:[UIFont systemFontOfSize:48]];
     [toJankenButton addTarget:self action:@selector(toJankenVC:) forControlEvents:UIControlEventTouchDown];
+    [toJankenButton setTitleColor:[UIColor colorWithRed:1. green:0. blue:0. alpha:1.] forState:UIControlStateNormal];
     
     // MARK: 感想送信後画面 400
     // キャラクタのセリフ風なラベル
@@ -241,9 +245,10 @@
     sentKansoTalkLabel.frame = CGRectMake(screenWidth-280, 70, 260, screenHeight-80);
     [[sentKansoTalkLabel layer] setBorderWidth:1.0];
     [[sentKansoTalkLabel layer] setCornerRadius:5.0];
-    [[sentKansoTalkLabel layer] setBorderColor:[[UIColor grayColor] CGColor]];
+    [[sentKansoTalkLabel layer] setBorderColor:[[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0] CGColor]];
     [[sentKansoTalkLabel layer] setBackgroundColor:[[UIColor whiteColor] CGColor]];
     sentKansoTalkLabel.numberOfLines = 10;
+    sentKansoTalkLabel.textColor = [UIColor colorWithRed:1. green:0. blue:0. alpha:1.];
     
     // キャラクタ
     sentKansoCharImg = [[UIImageView alloc] init];
@@ -265,6 +270,24 @@
     self.mySession.delegate = self;
     [self.advertiser start];
     
+    // MARK: Sound config
+    NSError *error = nil;
+    // 遷移時の音
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"button53" ofType:@"mp3"];
+    NSURL *url = [[NSURL alloc] initFileURLWithPath:path];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    [self.audioPlayer setDelegate:self];
+    //
+    NSString *path2 = [[NSBundle mainBundle] pathForResource:@"button77" ofType:@"mp3"];
+    NSURL *url2 = [[NSURL alloc] initFileURLWithPath:path2];
+    self.audioPlayer2 = [[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:&error];
+    [self.audioPlayer2 setDelegate:self];
+    
+    NSString *path3 = [[NSBundle mainBundle] pathForResource:@"chime" ofType:@"mp3"];
+    NSURL *url3 = [[NSURL alloc] initFileURLWithPath:path3];
+    self.audioPlayer3 = [[AVAudioPlayer alloc] initWithContentsOfURL:url3 error:&error];
+    [self.audioPlayer3 setDelegate:self];
+    
     // MARK: Clock setting
     myClock = [[BEMAnalogClockView alloc] initWithFrame:CGRectMake(screenWidth/2-150, screenHeight/2-150, 300, 300)];
     myClock.enableDigit = YES;
@@ -273,12 +296,18 @@
     myClock.hourHandLength = 90;
     myClock.minuteHandLength = 125;
     myClock.secondHandLength = 110;
-    myClock.digitColor = [UIColor blueColor];
+    myClock.digitColor = [UIColor colorWithRed:1.0 green:0.0 blue:0. alpha:1.0];
     myClock.faceBackgroundColor = [UIColor whiteColor];
-    myClock.borderColor = [UIColor blueColor];
-    myClock.hourHandColor = [UIColor blueColor];
-    myClock.minuteHandColor = [UIColor blueColor];
-    myClock.secondHandColor = [UIColor blackColor];
+    myClock.borderColor = [UIColor colorWithRed:1.0 green:0. blue:0. alpha:1.0];
+    myClock.hourHandColor = [UIColor colorWithRed:1.0 green:0. blue:0. alpha:1.0];
+    myClock.minuteHandColor = [UIColor colorWithRed:1.0 green:0. blue:0. alpha:1.0];
+    myClock.secondHandColor = [UIColor colorWithRed:1.0 green:0. blue:0. alpha:1.0];
+//    myClock.digitColor = [UIColor colorWithRed:0.90 green:0.26 blue:0.21 alpha:1.0];
+//    myClock.faceBackgroundColor = [UIColor whiteColor];
+//    myClock.borderColor = [UIColor colorWithRed:0.90 green:0.26 blue:0.21 alpha:1.0];
+//    myClock.hourHandColor = [UIColor colorWithRed:0.90 green:0.26 blue:0.21 alpha:1.0];
+//    myClock.minuteHandColor = [UIColor colorWithRed:0.90 green:0.26 blue:0.21 alpha:1.0];
+//    myClock.secondHandColor = [UIColor colorWithRed:0.90 green:0.26 blue:0.21 alpha:1.0];
     myClock.delegate = self;
     
     // background
@@ -300,7 +329,7 @@
 
 - (UIColor *)analogClock:(BEMAnalogClockView *)clock graduationColorForIndex:(NSInteger)index {
     if (!(index % 1) == 1) {
-        return [UIColor blueColor];
+        return [UIColor colorWithRed:1.0 green:0. blue:0. alpha:1.0];
     } else {
         return [UIColor whiteColor];
     }
@@ -322,6 +351,7 @@
 - (void)initScreen {
     [self clearScreenSubviews];
     dispatch_async(dispatch_get_main_queue(),^{
+        [self.view addSubview:toJankenButton];
         [self.view addSubview:myClock];
         [myClock startRealTime];
 //        [self.view addSubview:titleClockImgView_dummy];
@@ -338,6 +368,8 @@
     
     // append message to text box on main thread
     dispatch_async(dispatch_get_main_queue(),^{
+        [self.audioPlayer play];
+
         // 重複しない 3つの乱数
         int i[3];
         int x;
@@ -387,12 +419,15 @@
         [[Konashi shared] setDigitalInputDidChangeValueHandler:^(KonashiDigitalIOPin pin, int value) {
             if ([Konashi digitalRead:KonashiDigitalIO0] && value == 1) {
                 [self sendData2:selectShokuzaiKouhoArray[0]];
+                NSLog(@"PIO 0");
             }
             if ([Konashi digitalRead:KonashiDigitalIO3] && value == 1) {
                 [self sendData2:selectShokuzaiKouhoArray[1]];
+                NSLog(@"PIO 3");
             }
             if ([Konashi digitalRead:KonashiDigitalIO6] && value == 1) {
                 [self sendData2:selectShokuzaiKouhoArray[2]];
+                NSLog(@"PIO 6");
             }
         }];
     });
@@ -401,6 +436,7 @@
 #pragma mark - 送信
 
 - (void)sendData:(id)sender {
+    [self.audioPlayer play];
     [self clearScreenSubviews];
     
     UIButton *btntmp = (UIButton*)sender;
@@ -423,7 +459,6 @@
     if (isShokuzaiSelect == YES) {
         dispatch_async(dispatch_get_main_queue(),^{
             [self.view addSubview:sentShokuzaiCharImg];
-            [self.view addSubview:toJankenButton];
             [self.view addSubview:sentShokuzaiTalkLabel];
             [backClockButton setTitle:@"とけいにもどる" forState:UIControlStateNormal];
             [backClockButton addTarget:self action:@selector(initScreen) forControlEvents:UIControlEventTouchDown];
@@ -449,7 +484,7 @@
             [self changeText];
         }
         if ([Konashi digitalRead:KonashiDigitalIO6] && value == 1) {
-            [self toJankenVC:toJankenButton];
+            [self changeText];
         }
     }];
 
@@ -458,6 +493,7 @@
 #pragma mark - konashi SW による送信
 
 - (void)sendData2:(NSString*)tmp {
+    [self.audioPlayer play];
     [self clearScreenSubviews];
     
     // konashi SW の場合 sender 処理を抜かす
@@ -567,6 +603,7 @@
     if (state == MCSessionStateConnected) {
         isConnected = YES;
         [Konashi findWithName:@"konashi#4-1793"];
+        [self.audioPlayer play];
     } else {
         isConnected = NO;
         [self initScreen];

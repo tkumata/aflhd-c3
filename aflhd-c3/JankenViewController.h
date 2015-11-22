@@ -13,5 +13,6 @@
 
 @property(nonatomic) AVAudioPlayer *audioPlayer_win;
 @property(nonatomic) AVAudioPlayer *audioPlayer_lose;
+@property(nonatomic) AVAudioPlayer *audioPlayer_aiko;
 
 @end
