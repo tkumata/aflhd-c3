@@ -272,17 +272,19 @@
     
     // MARK: Sound config
     NSError *error = nil;
-    // 遷移時の音
+    // 遷移時、データ送信時の音
     NSString *path = [[NSBundle mainBundle] pathForResource:@"button53" ofType:@"mp3"];
     NSURL *url = [[NSURL alloc] initFileURLWithPath:path];
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     [self.audioPlayer setDelegate:self];
-    //
+    
+    // 未使用音
     NSString *path2 = [[NSBundle mainBundle] pathForResource:@"button77" ofType:@"mp3"];
     NSURL *url2 = [[NSURL alloc] initFileURLWithPath:path2];
     self.audioPlayer2 = [[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:&error];
     [self.audioPlayer2 setDelegate:self];
     
+    // 未使用音
     NSString *path3 = [[NSBundle mainBundle] pathForResource:@"chime" ofType:@"mp3"];
     NSURL *url3 = [[NSURL alloc] initFileURLWithPath:path3];
     self.audioPlayer3 = [[AVAudioPlayer alloc] initWithContentsOfURL:url3 error:&error];
@@ -302,12 +304,6 @@
     myClock.hourHandColor = [UIColor colorWithRed:1.0 green:0. blue:0. alpha:1.0];
     myClock.minuteHandColor = [UIColor colorWithRed:1.0 green:0. blue:0. alpha:1.0];
     myClock.secondHandColor = [UIColor colorWithRed:1.0 green:0. blue:0. alpha:1.0];
-//    myClock.digitColor = [UIColor colorWithRed:0.90 green:0.26 blue:0.21 alpha:1.0];
-//    myClock.faceBackgroundColor = [UIColor whiteColor];
-//    myClock.borderColor = [UIColor colorWithRed:0.90 green:0.26 blue:0.21 alpha:1.0];
-//    myClock.hourHandColor = [UIColor colorWithRed:0.90 green:0.26 blue:0.21 alpha:1.0];
-//    myClock.minuteHandColor = [UIColor colorWithRed:0.90 green:0.26 blue:0.21 alpha:1.0];
-//    myClock.secondHandColor = [UIColor colorWithRed:0.90 green:0.26 blue:0.21 alpha:1.0];
     myClock.delegate = self;
     
     // background
@@ -327,6 +323,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - 時計の目盛の色設定
+
 - (UIColor *)analogClock:(BEMAnalogClockView *)clock graduationColorForIndex:(NSInteger)index {
     if (!(index % 1) == 1) {
         return [UIColor colorWithRed:1.0 green:0. blue:0. alpha:1.0];
@@ -342,7 +340,6 @@
         for (UIView *v in self.view.subviews) {
             [v removeFromSuperview];
         }
-//        [myClock stopRealTime];
     });
 }
 
@@ -354,10 +351,6 @@
         [self.view addSubview:toJankenButton];
         [self.view addSubview:myClock];
         [myClock startRealTime];
-//        [self.view addSubview:titleClockImgView_dummy];
-//        [self.view addSubview:titleCharImgView];
-//        [self.view addSubview:titleStrImgView];
-//        [self.view addSubview:titleStrLabel];
     });
 }
 
@@ -419,15 +412,12 @@
         [[Konashi shared] setDigitalInputDidChangeValueHandler:^(KonashiDigitalIOPin pin, int value) {
             if ([Konashi digitalRead:KonashiDigitalIO0] && value == 1) {
                 [self sendData2:selectShokuzaiKouhoArray[0]];
-                NSLog(@"PIO 0");
             }
             if ([Konashi digitalRead:KonashiDigitalIO3] && value == 1) {
                 [self sendData2:selectShokuzaiKouhoArray[1]];
-                NSLog(@"PIO 3");
             }
             if ([Konashi digitalRead:KonashiDigitalIO6] && value == 1) {
                 [self sendData2:selectShokuzaiKouhoArray[2]];
-                NSLog(@"PIO 6");
             }
         }];
     });
@@ -457,6 +447,7 @@
     
     // 送信後の画面を構築する
     if (isShokuzaiSelect == YES) {
+        // 食前
         dispatch_async(dispatch_get_main_queue(),^{
             [self.view addSubview:sentShokuzaiCharImg];
             [self.view addSubview:sentShokuzaiTalkLabel];
@@ -467,6 +458,7 @@
         });
     } else {
         dispatch_async(dispatch_get_main_queue(),^{
+            // 食後
             [self.view addSubview:sentKansoCharImg];
             [self.view addSubview:sentKansoTalkLabel];
             [backClockButton setTitle:@"とけいにもどる" forState:UIControlStateNormal];
@@ -476,6 +468,7 @@
     }
     
     // konashi のボタンが押されたか監視する
+    // 食べ物の説明をするためのボタン
     [[Konashi shared] setDigitalInputDidChangeValueHandler:^(KonashiDigitalIOPin pin, int value) {
         if ([Konashi digitalRead:KonashiDigitalIO0] && value == 1) {
             [self changeText];
@@ -513,6 +506,7 @@
     
     if (isShokuzaiSelect == YES) {
         dispatch_async(dispatch_get_main_queue(),^{
+            // 食前
             [self.view addSubview:sentShokuzaiCharImg];
             [self.view addSubview:sentShokuzaiTalkLabel];
             [backClockButton setTitle:@"とけいにもどる" forState:UIControlStateNormal];
@@ -521,6 +515,7 @@
         });
     } else {
         dispatch_async(dispatch_get_main_queue(),^{
+            // 食後
             [self.view addSubview:sentKansoCharImg];
             [self.view addSubview:sentKansoTalkLabel];
             [backClockButton setTitle:@"とけいにもどる" forState:UIControlStateNormal];
@@ -530,6 +525,7 @@
     }
     
     // konashi のボタンが押されたか監視する
+    // 食べ物の説明をするためのボタン
     [[Konashi shared] setDigitalInputDidChangeValueHandler:^(KonashiDigitalIOPin pin, int value) {
         if ([Konashi digitalRead:KonashiDigitalIO0] && value == 1) {
             [self changeText];
@@ -554,7 +550,7 @@
     }
 }
 
-#pragma mark - 送信後画面で遊び 1
+#pragma mark - 遊び 1
 
 - (void)changeText {
     // キャラクタをタップもしくは SW を押下すると食べ物に関する何かが紹介される
@@ -571,7 +567,7 @@
     });
 }
 
-#pragma mark - じゃんけん画面へ遷移
+#pragma mark - 遊び 2 (じゃんけん)
 
 - (void)toJankenVC:(UIButton*)button {
     JankenViewController *jVC = [[JankenViewController alloc] init];

@@ -18,6 +18,12 @@
     UIButton *parButton;
     UIButton *nextJankenButton;
     
+    UIImage *imgJankenGu;
+    UIImage *imgJankenChoki;
+    UIImage *imgJankenPa;
+    UIImageView *jankenIVCom;
+    UIImageView *jankenIVUser;
+    
     UILabel *talkLabel;
     
     UIButton *backButton;
@@ -58,40 +64,53 @@
     screenWidth = self.view.frame.size.width;
     screenHeight = self.view.frame.size.height;
     
+    imgJankenGu = [UIImage imageNamed:@"gu.png"];
+    imgJankenChoki = [UIImage imageNamed:@"choki.png"];
+    imgJankenPa = [UIImage imageNamed:@"pa.png"];
+    
     // ボタン 1
-    gooButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    gooButton = [[UIButton alloc] init];
+    gooButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    gooButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     gooButton.tag = 201;
-    gooButton.frame = CGRectMake(10, screenHeight-40, screenWidth/3-20, 40);
-    [[gooButton layer] setBorderWidth:1.0];
-    [[gooButton layer] setCornerRadius:5.0];
-    [[gooButton layer] setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
-    [[gooButton layer] setBackgroundColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+    gooButton.frame = CGRectMake(10, screenHeight-100, screenWidth/3-20, screenWidth/3-20);
+//    [[gooButton layer] setBorderWidth:1.0];
+//    [[gooButton layer] setCornerRadius:5.0];
+//    [[gooButton layer] setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+//    [[gooButton layer] setBackgroundColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+    [gooButton setImage:imgJankenGu forState:UIControlStateNormal];
     [gooButton setTitle:[NSString stringWithFormat:@"グー"] forState:UIControlStateNormal];
     [gooButton addTarget:self action:@selector(result:) forControlEvents:UIControlEventTouchDown];
     [gooButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:gooButton];
     
     // ボタン 2
-    chokiButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    chokiButton = [[UIButton alloc] init];
+    chokiButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    chokiButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     chokiButton.tag = 202;
-    chokiButton.frame = CGRectMake(screenWidth/3+10, screenHeight-40, screenWidth/3-20, 40);
-    [[chokiButton layer] setBorderWidth:1.0];
-    [[chokiButton layer] setCornerRadius:5.0];
-    [[chokiButton layer] setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
-    [[chokiButton layer] setBackgroundColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+    chokiButton.frame = CGRectMake(screenWidth/3+10, screenHeight-100, screenWidth/3-20, screenWidth/3-20);
+//    [[chokiButton layer] setBorderWidth:1.0];
+//    [[chokiButton layer] setCornerRadius:5.0];
+//    [[chokiButton layer] setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+//    [[chokiButton layer] setBackgroundColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+    [chokiButton setImage:imgJankenChoki forState:UIControlStateNormal];
     [chokiButton setTitle:[NSString stringWithFormat:@"チョキ"] forState:UIControlStateNormal];
     [chokiButton addTarget:self action:@selector(result:) forControlEvents:UIControlEventTouchDown];
     [chokiButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:chokiButton];
     
     // ボタン 3
-    parButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    parButton = [[UIButton alloc] init];
+    parButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    parButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     parButton.tag = 203;
-    parButton.frame = CGRectMake(screenWidth*2/3+10, screenHeight-40, screenWidth/3-20, 40);
-    [[parButton layer] setBorderWidth:1.0];
-    [[parButton layer] setCornerRadius:5.0];
-    [[parButton layer] setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
-    [[parButton layer] setBackgroundColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+    parButton.frame = CGRectMake(screenWidth*2/3+10, screenHeight-100, screenWidth/3-20, screenWidth/3-20);
+//    [[parButton layer] setBorderWidth:1.0];
+//    [[parButton layer] setCornerRadius:5.0];
+//    [[parButton layer] setBorderColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+//    [[parButton layer] setBackgroundColor:[[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] CGColor]];
+    [parButton setImage:imgJankenPa forState:UIControlStateNormal];
     [parButton setTitle:[NSString stringWithFormat:@"パー"] forState:UIControlStateNormal];
     [parButton addTarget:self action:@selector(result:) forControlEvents:UIControlEventTouchDown];
     [parButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -100,19 +119,17 @@
     // キャラクタのセリフ風なラベル
     talkLabel = [[UILabel alloc] init];
     talkLabel.tag = 301;
-    talkLabel.frame = CGRectMake(40, 70, 500, screenHeight-140);
-//    [[talkLabel layer] setBorderWidth:1.0];
-//    [[talkLabel layer] setCornerRadius:5.0];
-//    [[talkLabel layer] setBorderColor:[[UIColor grayColor] CGColor]];
-    talkLabel.numberOfLines = 10;
+    talkLabel.frame = CGRectMake(40, 70, 500, screenHeight/2-80);
+    talkLabel.numberOfLines = 1;
     talkLabel.text = @"じゃーん、けん！";
     talkLabel.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.];
     talkLabel.font = [UIFont boldSystemFontOfSize:60];
+    talkLabel.textAlignment = NSTextAlignmentCenter;
     
     // 再選ボタン
     nextJankenButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     nextJankenButton.tag = 302;
-    nextJankenButton.frame = CGRectMake(screenWidth/2, screenHeight/2, screenWidth/3, 60);
+    nextJankenButton.frame = CGRectMake(screenWidth/2-screenWidth/6, screenHeight/2-20, screenWidth/3, 60);
     [[nextJankenButton layer] setBorderWidth:3.0];
     [[nextJankenButton layer] setCornerRadius:5.0];
     [[nextJankenButton layer] setBorderColor:[[UIColor colorWithRed:1. green:0.74 blue:0. alpha:1.0] CGColor]];
@@ -135,12 +152,14 @@
     [self.view addSubview:backButton];
     
     NSError *error = nil;
-    NSString *path_win = [[NSBundle mainBundle] pathForResource:@"button84" ofType:@"mp3"];
+    NSString *path_win = [[NSBundle mainBundle] pathForResource:@"win" ofType:@"mp3"];
+//    NSString *path_win = [[NSBundle mainBundle] pathForResource:@"button84" ofType:@"mp3"];
     NSURL *url_win = [[NSURL alloc] initFileURLWithPath:path_win];
     self.audioPlayer_win = [[AVAudioPlayer alloc] initWithContentsOfURL:url_win error:&error];
     [self.audioPlayer_win setDelegate:self];
     
-    NSString *path_lose = [[NSBundle mainBundle] pathForResource:@"button77" ofType:@"mp3"];
+    NSString *path_lose = [[NSBundle mainBundle] pathForResource:@"lose" ofType:@"mp3"];
+//    NSString *path_lose = [[NSBundle mainBundle] pathForResource:@"button77" ofType:@"mp3"];
     NSURL *url_lose = [[NSURL alloc] initFileURLWithPath:path_lose];
     self.audioPlayer_lose = [[AVAudioPlayer alloc] initWithContentsOfURL:url_lose error:&error];
     [self.audioPlayer_lose setDelegate:self];
@@ -191,28 +210,50 @@
 - (void)result:(id)sender {
     UIButton *btntmp = (UIButton*)sender;
     NSString *tmp = btntmp.currentTitle;
+    
     int plyTe = 0;
+    int comTe = 0;
+    int result = 0;
+    
     if ([tmp isEqualToString:@"グー"]) plyTe = 0;
     if ([tmp isEqualToString:@"チョキ"]) plyTe = 1;
     if ([tmp isEqualToString:@"パー"]) plyTe = 2;
     
-    int comTe = arc4random_uniform(2);
-    int result = (plyTe - comTe + 3) % 3;
+    switch (plyTe) {
+        case 0:
+            [[self.view viewWithTag:chokiButton.tag] removeFromSuperview];
+            [[self.view viewWithTag:parButton.tag] removeFromSuperview];
+            break;
+            
+        case 1:
+            [[self.view viewWithTag:gooButton.tag] removeFromSuperview];
+            [[self.view viewWithTag:parButton.tag] removeFromSuperview];
+            break;
+            
+        case 2:
+            [[self.view viewWithTag:gooButton.tag] removeFromSuperview];
+            [[self.view viewWithTag:chokiButton.tag] removeFromSuperview];
+            break;
+            
+        default:
+            break;
+    }
     
+    comTe = arc4random_uniform(2);
+    result = (plyTe - comTe + 3) % 3;
+    
+    // MARK: 勝負判定アルゴリズム
     if (result == 0) {
         talkLabel.text = @"あいこ";
         [self.audioPlayer_aiko play];
     } else if (result == 2) {
-        talkLabel.text = [NSString stringWithFormat:@"%@であなたのかち！", tmp];
+        talkLabel.text = [NSString stringWithFormat:@"あなたのかち！"];
         [self.audioPlayer_win play];
     } else {
-        talkLabel.text = [NSString stringWithFormat:@"%@であなたのまけ！", tmp];
+        talkLabel.text = [NSString stringWithFormat:@"あなたのまけ！"];
         [self.audioPlayer_lose play];
     }
     
-    [[self.view viewWithTag:gooButton.tag] removeFromSuperview];
-    [[self.view viewWithTag:chokiButton.tag] removeFromSuperview];
-    [[self.view viewWithTag:parButton.tag] removeFromSuperview];
     [self.view addSubview:talkLabel];
     [self.view addSubview:nextJankenButton];
 }
@@ -220,6 +261,9 @@
 #pragma mark - Next janken
 
 - (void)nextJanken {
+    gooButton.frame = CGRectMake(10, screenHeight-100, screenWidth/3-20, screenWidth/3-20);
+    chokiButton.frame = CGRectMake(screenWidth/3+10, screenHeight-100, screenWidth/3-20, screenWidth/3-20);
+    parButton.frame = CGRectMake(screenWidth*2/3+10, screenHeight-100, screenWidth/3-20, screenWidth/3-20);
     [[self.view viewWithTag:nextJankenButton.tag] removeFromSuperview];
     [[self.view viewWithTag:talkLabel.tag] removeFromSuperview];
     [self initScreen];
